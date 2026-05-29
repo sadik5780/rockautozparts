@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
           eyebrow="Why Rockautozparts"
           title="Built for Drivers,"
           accent="Trusted by Shops"
-          sub="From the customer in their driveway to the busy independent shop — we treat every part request like our own truck is on the lift."
+          sub="From the daily driver in the driveway to the work truck in the bay — we treat every part request like our own car is on the lift."
         />
 
         <ul className={styles.grid}>

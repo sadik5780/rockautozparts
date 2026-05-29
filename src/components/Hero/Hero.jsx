@@ -51,7 +51,7 @@ export default function Hero() {
           >
             Reliable <span className={styles.accent}>OEM &amp; Aftermarket</span>
             <br />
-            Auto Parts.
+            Car &amp; Truck Parts.
           </motion.h1>
 
           <motion.p
@@ -61,8 +61,8 @@ export default function Hero() {
             variants={fadeUp}
             custom={2}
           >
-            We help customers across the USA source tested engines, transmissions,
-            suspension parts, and more — VIN matched, warrantied, and ready to ship.
+            We help drivers and shops across the USA source tested engines, transmissions,
+            suspension, and more for cars and trucks — VIN matched, warrantied, and ready to ship.
           </motion.p>
 
           <motion.ul

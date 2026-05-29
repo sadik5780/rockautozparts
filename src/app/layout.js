@@ -4,12 +4,14 @@ import { site } from '@/data/site';
 export const metadata = {
   metadataBase: new URL('https://rockautozparts.com'),
   title: {
-    default: `${site.name} — OEM & Aftermarket Auto Parts Across the USA`,
+    default: `${site.name} — OEM & Aftermarket Parts for Cars & Trucks Across the USA`,
     template: `%s | ${site.name}`,
   },
   description:
-    'Rockautozparts.com supplies tested engines, transmissions, suspension, brakes, and electrical components to drivers and shops across the USA. Fast shipping. Warranty included. Expert support.',
+    'Rockautozparts.com supplies tested engines, transmissions, suspension, brakes, and electrical components for cars and trucks to drivers and shops across the USA. Fast shipping. Warranty included. Expert support.',
   keywords: [
+    'car parts',
+    'truck parts',
     'OEM auto parts',
     'aftermarket auto parts',
     'used engines',
@@ -24,9 +26,9 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://rockautozparts.com',
     siteName: site.name,
-    title: `${site.name} — OEM & Aftermarket Auto Parts Across the USA`,
+    title: `${site.name} — OEM & Aftermarket Parts for Cars & Trucks Across the USA`,
     description:
-      'Tested engines, transmissions, suspension and more. Fast nationwide shipping with warranty protection.',
+      'Tested engines, transmissions, suspension and more for cars and trucks. Fast nationwide shipping with warranty protection.',
     images: [
       {
         url: 'https://images.pexels.com/photos/5158091/pexels-photo-5158091.jpeg?auto=compress&cs=tinysrgb&w=1200',
@@ -38,9 +40,9 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${site.name} — OEM & Aftermarket Auto Parts`,
+    title: `${site.name} — OEM & Aftermarket Parts for Cars & Trucks`,
     description:
-      'Tested engines, transmissions, suspension and more. Fast nationwide shipping with warranty protection.',
+      'Tested engines, transmissions, suspension and more for cars and trucks. Fast nationwide shipping with warranty protection.',
   },
   robots: {
     index: true,

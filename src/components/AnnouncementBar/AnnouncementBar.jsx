@@ -13,7 +13,7 @@ export default function AnnouncementBar() {
       <div className={styles.inner}>
         <p className={styles.headline}>
           <span className={styles.dot} aria-hidden="true" />
-          OEM &amp; Aftermarket Auto Parts Across the USA
+          OEM &amp; Aftermarket Parts for Cars &amp; Trucks — Shipped Across the USA
         </p>
         <ul className={styles.perks}>
           {perks.map((p) => (

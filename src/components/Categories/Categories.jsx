@@ -14,7 +14,7 @@ export default function Categories() {
           eyebrow="Featured Categories"
           title="Parts We"
           accent="Move Daily"
-          sub="From short blocks to ABS modules, our specialists source the categories below faster than anywhere else in the country."
+          sub="From short blocks to ABS modules, our specialists source the categories below for cars and trucks faster than anywhere else in the country."
         />
 
         <ul className={styles.grid}>

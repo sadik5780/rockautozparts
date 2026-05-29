@@ -6,7 +6,7 @@ export const testimonials = [
     location: 'Phoenix, AZ',
     rating: 5,
     quote:
-      'Needed a low-mileage 5.7 HEMI for a customer rebuild. Rockautozparts sourced it in two days and it dropped in clean. Compression tested out of the crate.',
+      'Needed a low-mileage 3.6L V6 for a customer’s sedan rebuild. Rockautozparts sourced it in two days and it dropped in clean. Compression tested out of the crate.',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const testimonials = [
     location: 'Denver, CO',
     rating: 5,
     quote:
-      'Their team understood our downtime pressure. Transmission was crated and on a truck the same afternoon — saved us a full week on the repair.',
+      'Their team understood our downtime pressure. The transmission for one of our pickups was crated and on a truck the same afternoon — saved us a full week on the repair.',
   },
   {
     id: 3,

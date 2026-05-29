@@ -2,7 +2,7 @@ export const categories = [
   {
     id: 'engines',
     title: 'Engines',
-    subtitle: 'Tested low-mileage gas & diesel',
+    subtitle: 'Tested low-mileage gas & diesel — cars & trucks',
     image:
       'https://images.pexels.com/photos/11455717/pexels-photo-11455717.jpeg?auto=compress&cs=tinysrgb&w=1400',
   },

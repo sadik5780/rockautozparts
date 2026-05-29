@@ -28,7 +28,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className={styles.tagline}>
-              Tested OEM &amp; aftermarket auto parts shipped nationwide. Trusted by mechanics, fleets, and drivers across the USA.
+              Tested OEM &amp; aftermarket parts for cars and trucks, shipped nationwide. Trusted by mechanics, fleets, and drivers across the USA.
             </p>
             <ul className={styles.social}>
               {site.social.map((s) => (
@@ -84,6 +84,13 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        <p className={styles.disclaimer}>
+          {site.name} is an independent company. We are not a part of, affiliated with,
+          endorsed by, or sponsored by RockAuto, LLC or any vehicle manufacturer. All brand
+          names, logos, and trademarks are the property of their respective owners and are
+          used for identification purposes only.
+        </p>
 
         <div className={styles.bottom}>
           <p>

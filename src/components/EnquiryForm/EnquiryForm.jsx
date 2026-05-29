@@ -211,7 +211,7 @@ export default function EnquiryForm() {
                   error={touched.make && errors.make}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="Ford"
+                  placeholder="Toyota"
                 />
                 <Field
                   label="Model"
@@ -221,7 +221,7 @@ export default function EnquiryForm() {
                   error={touched.model && errors.model}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="F-150"
+                  placeholder="Camry"
                 />
               </div>
 
@@ -234,7 +234,7 @@ export default function EnquiryForm() {
                   error={touched.trim && errors.trim}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="XLT"
+                  placeholder="SE"
                 />
                 <Field
                   label="Engine Size"
@@ -244,7 +244,7 @@ export default function EnquiryForm() {
                   error={touched.engineSize && errors.engineSize}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="5.0L V8"
+                  placeholder="2.5L I4"
                 />
                 <Field
                   label="VIN"

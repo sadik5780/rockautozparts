@@ -1,7 +1,7 @@
 export const site = {
   name: 'Rockautozparts.com',
   shortName: 'ROCKAUTOZ',
-  tagline: 'OEM & Aftermarket Auto Parts Across the USA',
+  tagline: 'OEM & Aftermarket Parts for Cars & Trucks — Across the USA',
   phone: '+1 (888) 653-9691',
   phoneHref: 'tel:+18886539691',
   address: {
