@@ -91,7 +91,7 @@ export default function Hero() {
             custom={4}
           >
             <a href="#enquiry" className={styles.primary}>
-              Request Quote
+              Request a Part
               <Icon name="arrowRight" size={18} stroke={2.4} />
             </a>
             <a href={site.phoneHref} className={styles.secondary}>
@@ -113,8 +113,8 @@ export default function Hero() {
             </div>
             <div className={styles.statDivider} aria-hidden="true" />
             <div className={styles.stat}>
-              <span className={styles.statValue}>48hr</span>
-              <span className={styles.statLabel}>Avg. Quote Time</span>
+              <span className={styles.statValue}>5 min</span>
+              <span className={styles.statLabel}>Response Time</span>
             </div>
             <div className={styles.statDivider} aria-hidden="true" />
             <div className={styles.stat}>

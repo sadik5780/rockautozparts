@@ -10,9 +10,12 @@ const initialForm = {
   fullName: '',
   phone: '',
   email: '',
+  year: '',
   make: '',
   model: '',
-  year: '',
+  trim: '',
+  engineSize: '',
+  vin: '',
   partNumber: '',
   message: '',
 };
@@ -32,14 +35,16 @@ function validate(values) {
   if (!values.email.trim()) errors.email = 'Email is required.';
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) errors.email = 'Enter a valid email.';
 
-  if (!values.make.trim()) errors.make = 'Vehicle make is required.';
-  if (!values.model.trim()) errors.model = 'Vehicle model is required.';
-
   const yearNum = Number(values.year);
   if (!values.year) errors.year = 'Year is required.';
   else if (!Number.isInteger(yearNum) || yearNum < 1950 || yearNum > currentYear + 1) {
     errors.year = `Enter a year between 1950 and ${currentYear + 1}.`;
   }
+
+  if (!values.make.trim()) errors.make = 'Vehicle make is required.';
+  if (!values.model.trim()) errors.model = 'Vehicle model is required.';
+  if (!values.trim.trim()) errors.trim = 'Trim is required.';
+  if (!values.engineSize.trim()) errors.engineSize = 'Engine size is required.';
 
   return errors;
 }
@@ -114,9 +119,9 @@ export default function EnquiryForm() {
               <div className={styles.successIcon} aria-hidden="true">
                 <Icon name="check" size={36} stroke={3} />
               </div>
-              <h3 className={styles.successTitle}>Quote Request Received</h3>
+              <h3 className={styles.successTitle}>Part Request Received</h3>
               <p className={styles.successText}>
-                Thanks{values.fullName ? `, ${values.fullName.split(' ')[0]}` : ''}. One of our specialists will reach out within 24 hours with a tested-part quote and shipping timeline.
+                Thanks{values.fullName ? `, ${values.fullName.split(' ')[0]}` : ''}. A specialist will respond within <strong>5 minutes</strong> with part availability, pricing, and shipping details.
               </p>
               <button type="button" className={styles.successBtn} onClick={reset}>
                 Submit Another Request
@@ -134,11 +139,15 @@ export default function EnquiryForm() {
               transition={{ duration: 0.3 }}
             >
               <header className={styles.header}>
-                <span className={styles.eyebrow}>Get a Free Quote</span>
+                <span className={styles.eyebrow}>Part Request Form</span>
                 <h2 className={styles.title}>Find Your Part in Minutes</h2>
                 <p className={styles.sub}>
-                  No spam. No pressure. Just a real quote from a real specialist.
+                  No spam. No pressure. Just a real part specialist.
                 </p>
+                <div className={styles.responseBadge} aria-label="Response time">
+                  <span className={styles.responseDot} aria-hidden="true" />
+                  Responses within <span className={styles.responseAccent}>5 minutes</span>
+                </div>
               </header>
 
               <div className={styles.row}>
@@ -182,6 +191,19 @@ export default function EnquiryForm() {
 
               <div className={styles.row3}>
                 <Field
+                  label="Year"
+                  name="year"
+                  type="number"
+                  required
+                  value={values.year}
+                  error={touched.year && errors.year}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="2018"
+                  min="1950"
+                  max={currentYear + 1}
+                />
+                <Field
                   label="Make"
                   name="make"
                   required
@@ -201,18 +223,38 @@ export default function EnquiryForm() {
                   onBlur={handleBlur}
                   placeholder="F-150"
                 />
+              </div>
+
+              <div className={styles.row3}>
                 <Field
-                  label="Year"
-                  name="year"
-                  type="number"
+                  label="Trim"
+                  name="trim"
                   required
-                  value={values.year}
-                  error={touched.year && errors.year}
+                  value={values.trim}
+                  error={touched.trim && errors.trim}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  placeholder="2018"
-                  min="1950"
-                  max={currentYear + 1}
+                  placeholder="XLT"
+                />
+                <Field
+                  label="Engine Size"
+                  name="engineSize"
+                  required
+                  value={values.engineSize}
+                  error={touched.engineSize && errors.engineSize}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="5.0L V8"
+                />
+                <Field
+                  label="VIN"
+                  name="vin"
+                  optional
+                  value={values.vin}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  placeholder="17 characters"
+                  maxLength={17}
                 />
               </div>
 
@@ -251,7 +293,7 @@ export default function EnquiryForm() {
                   </>
                 ) : (
                   <>
-                    Request Quote
+                    Submit Part Request
                     <Icon name="arrowRight" size={18} stroke={2.4} />
                   </>
                 )}

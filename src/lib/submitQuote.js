@@ -3,16 +3,19 @@ export async function submitQuote(values) {
   const key = process.env.NEXT_PUBLIC_QUOTE_KEY;
 
   if (!endpoint || !key) {
-    return { success: false, message: 'Quote endpoint is not configured.' };
+    return { success: false, message: 'Form endpoint is not configured.' };
   }
 
   const lines = [
     `Full Name: ${values.fullName}`,
     `Phone: ${values.phone}`,
     `Email: ${values.email}`,
+    `Year: ${values.year}`,
     `Make: ${values.make}`,
     `Model: ${values.model}`,
-    `Year: ${values.year}`,
+    `Trim: ${values.trim}`,
+    `Engine Size: ${values.engineSize}`,
+    `VIN: ${values.vin || '—'}`,
     `Part Number: ${values.partNumber || '—'}`,
     '',
     'Message:',
@@ -21,7 +24,7 @@ export async function submitQuote(values) {
 
   const fd = new FormData();
   fd.append('access_key', key);
-  fd.append('subject', `New Quote Request — ${values.fullName}`);
+  fd.append('subject', `New Part Request — ${values.fullName}`);
   fd.append('from_name', 'Rockautozparts.com');
   fd.append('name', values.fullName);
   fd.append('email', values.email);

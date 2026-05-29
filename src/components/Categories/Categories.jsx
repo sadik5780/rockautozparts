@@ -39,8 +39,8 @@ export default function Categories() {
                   <h3 className={styles.cardTitle}>{cat.title}</h3>
                   <p className={styles.cardSub}>{cat.subtitle}</p>
                 </div>
-                <a href="#enquiry" className={styles.cardCta} aria-label={`Request a quote for ${cat.title}`}>
-                  <span>Request Quote</span>
+                <a href="#enquiry" className={styles.cardCta} aria-label={`Request a part for ${cat.title}`}>
+                  <span>Request Part</span>
                   <Icon name="arrowRight" size={16} stroke={2.4} />
                 </a>
               </div>

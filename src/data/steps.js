@@ -13,8 +13,8 @@ export const steps = [
   },
   {
     id: 3,
-    title: 'Receive Quote & Shipping Details',
+    title: 'Get a Response in 5 Minutes',
     description:
-      'Get a transparent quote with shipping ETA and warranty terms. Approve and we crate, ship, and track to your door.',
+      'A specialist replies within 5 minutes with part availability, transparent pricing, shipping ETA, and warranty terms. Approve and we crate, ship, and track to your door.',
   },
 ];

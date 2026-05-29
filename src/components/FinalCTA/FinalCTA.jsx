@@ -27,7 +27,7 @@ export default function FinalCTA() {
             </h2>
             <p className={styles.sub}>
               Talk to a US-based parts specialist or submit your vehicle details — most
-              quotes come back within one business day.
+              requests get a response within <strong>5 minutes</strong>.
             </p>
 
             <div className={styles.ctas}>
@@ -36,7 +36,7 @@ export default function FinalCTA() {
                 Call Now — {site.phone}
               </a>
               <a href="#enquiry" className={styles.secondary}>
-                Request Quote
+                Request a Part
                 <Icon name="arrowRight" size={18} stroke={2.4} />
               </a>
             </div>

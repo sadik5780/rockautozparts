@@ -7,21 +7,21 @@ import { site } from '@/data/site';
 
 export const metadata = {
   title: 'Privacy Policy',
-  description: `${site.name} privacy policy — how we collect, use, and protect customer data submitted through quote requests and contact forms.`,
+  description: `${site.name} privacy policy — how we collect, use, and protect customer data submitted through part requests and contact forms.`,
 };
 
 const sections = [
   {
     heading: '1. Information We Collect',
     body: [
-      `${site.name} ("we," "us," or "our") collects information you voluntarily provide when you request a quote, contact our team, or interact with our website. This typically includes your full name, phone number, email address, vehicle details (make, model, year, VIN), and any part-related information you choose to share.`,
+      `${site.name} ("we," "us," or "our") collects information you voluntarily provide when you submit a part request, contact our team, or interact with our website. This typically includes your full name, phone number, email address, vehicle details (year, make, model, trim, engine size, VIN), and any part-related information you choose to share.`,
       'We may also automatically collect non-identifying technical data such as browser type, device information, IP address, referring pages, and pages visited on our site. This information is used to operate and improve our website.',
     ],
   },
   {
-    heading: '2. How We Use Quote & Contact Submissions',
+    heading: '2. How We Use Part Request & Contact Submissions',
     body: [
-      'Information submitted through our quote request and contact forms is used exclusively to respond to your inquiry, source and quote the requested auto parts, coordinate shipping, and provide ongoing customer service related to your request.',
+      'Information submitted through our part request and contact forms is used exclusively to respond to your inquiry, source and price the requested auto parts, coordinate shipping, and provide ongoing customer service related to your request.',
       'We do not sell or rent your personal information. We may share necessary details with verified parts suppliers in our network solely to fulfill the part you requested.',
     ],
   },
@@ -76,7 +76,7 @@ export default function PrivacyPolicyPage() {
           eyebrow="Legal"
           title="Privacy Policy"
           updated="January 12, 2026"
-          intro={`This Privacy Policy describes how ${site.name} collects, uses, and protects information when you visit our website or submit a quote request.`}
+          intro={`This Privacy Policy describes how ${site.name} collects, uses, and protects information when you visit our website or submit a part request.`}
           sections={sections}
         />
       </main>
