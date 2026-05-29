@@ -202,7 +202,7 @@
 .mobileMenu {
   position: fixed;
   inset: 0;
-  z-index: 80;
+  z-index: 100;
   background: rgba(15, 17, 21, 0.7);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -219,6 +219,8 @@
   display: flex;
   flex-direction: column;
   padding: 1.25rem 1.5rem 2rem;
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0));
+  overflow-y: auto;
   box-shadow: -20px 0 50px rgba(0, 0, 0, 0.4);
 }
 
