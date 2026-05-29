@@ -142,7 +142,7 @@ export default function EnquiryForm() {
                 <span className={styles.eyebrow}>Part Request Form</span>
                 <h2 className={styles.title}>Find Your Part in Minutes</h2>
                 <p className={styles.sub}>
-                  No spam. No pressure. Just a real part specialist.
+                 Just a real part specialist.
                 </p>
                 <div className={styles.responseBadge} aria-label="Response time">
                   <span className={styles.responseDot} aria-hidden="true" />
