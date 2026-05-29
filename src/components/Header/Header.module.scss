@@ -1,0 +1,320 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(15, 17, 21, 0.72);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid transparent;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.scrolled {
+  background: rgba(15, 17, 21, 0.92);
+  border-bottom-color: $color-border;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1rem;
+
+  @include lg {
+    padding-block: 1.25rem;
+  }
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: $color-text;
+}
+
+.logoMark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: $color-surface-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  color: $color-accent;
+  transition: border-color 0.25s ease;
+}
+
+.logo:hover .logoMark {
+  border-color: $color-border-strong;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoBrand {
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.logoSub {
+  font-size: 0.66rem;
+  color: $color-text-dim;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.nav {
+  display: none;
+  gap: 0.25rem;
+  align-items: center;
+
+  @include lg {
+    display: flex;
+  }
+}
+
+.navLink {
+  position: relative;
+  padding: 0.55rem 1rem;
+  font-size: 0.86rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: $color-text-muted;
+  border-radius: $radius-sm;
+  transition: color 0.2s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 0.35rem;
+    height: 1px;
+    background: $color-accent;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    color: $color-text;
+
+    &::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.callBtn {
+  display: none;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background: $color-accent;
+  color: #fff;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease;
+
+  @include md {
+    display: inline-flex;
+  }
+
+  &:hover {
+    background: $color-accent-hover;
+    transform: translateY(-1px);
+  }
+}
+
+.callIcon {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.22);
+  border-radius: $radius-sm;
+}
+
+.callText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  padding-right: 0.4rem;
+}
+
+.callLabel {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  opacity: 0.9;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.callNumber {
+  font-family: $font-display;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.hamburger {
+  @include btn-reset;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: $color-text;
+  border-radius: $radius-md;
+  background: $color-surface-2;
+  border: 1px solid $color-border;
+  transition: border-color 0.2s ease;
+
+  @include lg {
+    display: none;
+  }
+
+  &:hover {
+    border-color: $color-border-strong;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(15, 17, 21, 0.7);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.mobileMenuPanel {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(360px, 88vw);
+  background: $color-surface;
+  border-left: 1px solid $color-border;
+  display: flex;
+  flex-direction: column;
+  padding: 1.25rem 1.5rem 2rem;
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.4);
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 0.5rem 1.5rem;
+  border-bottom: 1px solid $color-border;
+}
+
+.closeBtn {
+  @include btn-reset;
+  color: $color-text;
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: $radius-md;
+  background: $color-surface-2;
+  border: 1px solid $color-border;
+
+  &:hover {
+    border-color: $color-border-strong;
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.1rem 0.25rem;
+  font-family: $font-display;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: $color-text;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid $color-border;
+  text-decoration: none;
+  transition: color 0.2s ease, padding 0.2s ease;
+
+  svg {
+    color: $color-text-dim;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  &:hover {
+    color: $color-accent;
+    padding-left: 0.6rem;
+
+    svg {
+      color: $color-accent;
+      transform: translateX(2px);
+    }
+  }
+}
+
+.mobileMenuFoot {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid $color-border;
+}
+
+.mobileCall {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  background: $color-accent;
+  color: #fff;
+  font-family: $font-display;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background 0.25s ease;
+
+  &:hover {
+    background: $color-accent-hover;
+  }
+}
+
+.mobileSub {
+  margin-top: 1rem;
+  font-size: 0.74rem;
+  color: $color-text-dim;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}

@@ -1,0 +1,253 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: 4rem 5rem;
+  isolation: isolate;
+
+  @include md {
+    padding-block: 6rem 7rem;
+  }
+
+  @include lg {
+    padding-block: 7.5rem 8.5rem;
+  }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.pexels.com/photos/5158091/pexels-photo-5158091.jpeg?auto=compress&cs=tinysrgb&w=2200');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.32;
+  filter: saturate(0.75) contrast(1.05);
+}
+
+.bgGradient {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(110deg, rgba(15, 17, 21, 0.96) 0%, rgba(15, 17, 21, 0.78) 50%, rgba(15, 17, 21, 0.45) 100%),
+    linear-gradient(180deg, rgba(15, 17, 21, 0) 0%, $color-bg 95%);
+}
+
+.bgGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 60% 60% at 30% 50%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 30% 50%, #000 30%, transparent 75%);
+  opacity: 0.6;
+}
+
+.inner {
+  @include container;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+
+  @include lg {
+    grid-template-columns: 1.05fr 1fr;
+    gap: 4.5rem;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  max-width: 640px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  align-self: flex-start;
+  padding: 0.4rem 0.85rem;
+  background: $color-surface-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+  font-size: 0.72rem;
+  color: $color-text-muted;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-accent;
+}
+
+.headline {
+  margin-top: 1.6rem;
+  font-size: clamp(2.6rem, 5.4vw, 4.4rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.018em;
+  color: $color-text;
+}
+
+.accent {
+  color: $color-accent;
+}
+
+.subhead {
+  margin-top: 1.4rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: $color-text-muted;
+  max-width: 540px;
+
+  @include md {
+    font-size: 1.1rem;
+  }
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.75rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem 0.5rem 0.55rem;
+  background: $color-surface-2;
+  border: 1px solid $color-border;
+  border-radius: $radius-pill;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: $color-text;
+  letter-spacing: 0.02em;
+}
+
+.badgeIcon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: $color-accent-soft;
+  color: $color-accent;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2.2rem;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.85rem;
+  background: $color-accent;
+  color: #fff;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: $shadow-accent;
+
+  &:hover {
+    background: $color-accent-hover;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem 1.75rem;
+  background: $color-surface-2;
+  color: $color-text;
+  font-weight: 500;
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    background: $color-surface-3;
+    border-color: $color-border-strong;
+    transform: translateY(-1px);
+  }
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid $color-border;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.statValue {
+  font-family: $font-display;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: $color-text;
+  letter-spacing: -0.005em;
+}
+
+.statLabel {
+  font-size: 0.7rem;
+  color: $color-text-dim;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.statDivider {
+  width: 1px;
+  height: 30px;
+  background: $color-border;
+}
+
+.formWrap {
+  width: 100%;
+}

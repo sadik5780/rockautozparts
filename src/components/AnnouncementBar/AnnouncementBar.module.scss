@@ -1,0 +1,67 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.bar {
+  background: $color-surface-2;
+  border-bottom: 1px solid $color-border;
+  color: $color-text-muted;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  z-index: 60;
+}
+
+.inner {
+  @include container;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding-block: 0.65rem;
+  text-align: center;
+  flex-wrap: wrap;
+
+  @include md {
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.headline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0;
+  color: $color-text;
+  font-weight: 500;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-accent;
+}
+
+.perks {
+  display: none;
+  gap: 1.75rem;
+  align-items: center;
+
+  @include md {
+    display: flex;
+  }
+}
+
+.perk {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: $color-text-dim;
+
+  svg {
+    flex-shrink: 0;
+    color: $color-accent;
+    opacity: 0.85;
+  }
+}

@@ -1,0 +1,170 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  @include section;
+  background: $color-bg;
+}
+
+.inner {
+  @include container;
+}
+
+.card {
+  position: relative;
+  border-radius: $radius-xl;
+  overflow: hidden;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  padding: 3.5rem 1.75rem;
+  text-align: center;
+  box-shadow: $shadow-md;
+
+  @include md {
+    padding: 5rem 3rem;
+  }
+
+  @include lg {
+    padding: 6rem 4rem;
+  }
+}
+
+.accentBar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 3px;
+  background: $color-accent;
+  border-radius: 0 0 2px 2px;
+}
+
+.content {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.4rem 0.9rem;
+  background: $color-accent-soft;
+  border: 1px solid $color-accent-border;
+  border-radius: $radius-pill;
+  color: $color-accent;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+
+.eyebrowDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-accent;
+}
+
+.headline {
+  font-size: clamp(2.2rem, 4.6vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.05;
+  color: $color-text;
+  text-transform: uppercase;
+}
+
+.accent {
+  color: $color-accent;
+}
+
+.sub {
+  margin-top: 1.4rem;
+  max-width: 560px;
+  font-size: 1.05rem;
+  color: $color-text-muted;
+  line-height: 1.7;
+}
+
+.ctas {
+  margin-top: 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.05rem 2rem;
+  background: $color-accent;
+  color: #fff;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: $radius-md;
+  text-decoration: none;
+  box-shadow: $shadow-accent;
+  transition: background 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    background: $color-accent-hover;
+    transform: translateY(-1px);
+  }
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 1rem 1.85rem;
+  background: $color-surface-2;
+  color: $color-text;
+  font-weight: 500;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid $color-border;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    background: $color-surface-3;
+    border-color: $color-border-strong;
+    transform: translateY(-1px);
+  }
+}
+
+.trust {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2rem;
+  justify-content: center;
+}
+
+.trustItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $color-text-dim;
+
+  svg {
+    color: $color-accent;
+  }
+}

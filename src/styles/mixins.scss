@@ -1,0 +1,74 @@
+@use './variables' as *;
+
+// Media queries — mobile-first
+@mixin sm {
+  @media (min-width: $bp-sm) { @content; }
+}
+@mixin md {
+  @media (min-width: $bp-md) { @content; }
+}
+@mixin lg {
+  @media (min-width: $bp-lg) { @content; }
+}
+@mixin xl {
+  @media (min-width: $bp-xl) { @content; }
+}
+
+// Container
+@mixin container {
+  width: 100%;
+  max-width: $container-max;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @include md { padding-inline: 2.25rem; }
+  @include lg { padding-inline: 2.75rem; }
+}
+
+// Section padding — more breathing room
+@mixin section {
+  padding-block: 5rem;
+  @include md { padding-block: 7rem; }
+  @include lg { padding-block: 8.5rem; }
+}
+
+// Surface card — matte, premium
+@mixin surface-card {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+}
+
+// Display heading
+@mixin display-heading {
+  font-family: $font-display;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.05;
+  text-transform: uppercase;
+}
+
+// Eyebrow label
+@mixin eyebrow {
+  font-family: $font-body;
+  font-size: 0.74rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+// Button reset
+@mixin btn-reset {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+// Focus ring
+@mixin focus-ring {
+  outline: 2px solid $color-accent;
+  outline-offset: 3px;
+}

@@ -1,0 +1,191 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.page {
+  background: $color-bg;
+  padding-bottom: 5rem;
+}
+
+.hero {
+  position: relative;
+  padding-block: 4rem 4.5rem;
+  overflow: hidden;
+  background: $color-surface;
+  border-bottom: 1px solid $color-border;
+
+  @include md {
+    padding-block: 5.5rem 6.5rem;
+  }
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 60% 60% at 70% 40%, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 60% 60% at 70% 40%, #000 30%, transparent 75%);
+  opacity: 0.6;
+}
+
+.heroInner {
+  @include container;
+  position: relative;
+  max-width: 880px;
+}
+
+.crumbs {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: $color-text-dim;
+  font-weight: 500;
+
+  svg {
+    color: $color-text-faint;
+  }
+}
+
+.crumbLink {
+  color: $color-text-dim;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.eyebrow {
+  display: inline-block;
+  margin-top: 1.6rem;
+  padding: 0.35rem 0.75rem;
+  background: $color-accent-soft;
+  border: 1px solid $color-accent-border;
+  color: $color-accent;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: $radius-sm;
+}
+
+.title {
+  margin-top: 1.4rem;
+  font-size: clamp(2.4rem, 4.8vw, 3.6rem);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.05;
+  color: $color-text;
+  text-transform: uppercase;
+}
+
+.updated {
+  margin-top: 1.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: $color-text-dim;
+
+  svg {
+    color: $color-accent;
+  }
+}
+
+.intro {
+  margin-top: 1.6rem;
+  max-width: 720px;
+  font-size: 1.05rem;
+  color: $color-text-muted;
+  line-height: 1.7;
+}
+
+.body {
+  position: relative;
+}
+
+.bodyInner {
+  @include container;
+  max-width: 880px;
+  padding-top: 1rem;
+}
+
+.section {
+  padding-block: 2.75rem;
+  border-top: 1px solid $color-border;
+
+  &:first-of-type {
+    border-top: 0;
+    padding-top: 2rem;
+  }
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  color: $color-text;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-left: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 2px;
+    background: $color-accent;
+    border-radius: 2px;
+  }
+}
+
+.paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: $color-text-muted;
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.backWrap {
+  margin-top: 3.5rem;
+  text-align: center;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 1.75rem;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  color: $color-text;
+  font-weight: 500;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: $radius-md;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease;
+
+  &:hover {
+    background: $color-surface-2;
+    border-color: $color-border-strong;
+  }
+}
+
+.backArrow {
+  transform: rotate(180deg);
+}
