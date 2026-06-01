@@ -1,0 +1,83 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.section {
+  @include section;
+  position: relative;
+  background: $color-bg;
+}
+
+.inner {
+  @include container;
+}
+
+.list {
+  list-style: none;
+  margin: 3rem auto 0;
+  max-width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.item {
+  @include surface-card;
+  overflow: hidden;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: $color-border-strong;
+  }
+}
+
+.questionWrap {
+  margin: 0;
+}
+
+.question {
+  @include btn-reset;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem 1.5rem;
+  text-align: left;
+  font-family: $font-body;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: $color-text;
+  line-height: 1.4;
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.chevron {
+  flex-shrink: 0;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid $color-accent;
+  border-bottom: 2px solid $color-accent;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-bottom: 4px;
+}
+
+.chevronOpen {
+  transform: rotate(-135deg);
+  margin-bottom: -4px;
+}
+
+.answer {
+  overflow: hidden;
+
+  p {
+    margin: 0;
+    padding: 0 1.5rem 1.4rem;
+    color: $color-text-muted;
+    font-size: 0.97rem;
+    line-height: 1.7;
+  }
+}

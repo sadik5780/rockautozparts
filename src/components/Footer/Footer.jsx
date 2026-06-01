@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import Icon from '../Icon/Icon';
 import { site } from '@/data/site';
 import styles from './Footer.module.scss';
@@ -19,13 +20,13 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brandCol}>
             <Link href="/" className={styles.logo} aria-label={`${site.name} home`}>
-              <span className={styles.logoMark} aria-hidden="true">
-                <Icon name="gear" size={22} stroke={2.2} />
-              </span>
-              <span className={styles.logoText}>
-                <span className={styles.logoBrand}>ROCKAUTOZ</span>
-                <span className={styles.logoSub}>Parts.com</span>
-              </span>
+              <Image
+                src="/logo2.png"
+                alt={site.name}
+                width={866}
+                height={288}
+                className={styles.logoImg}
+              />
             </Link>
             <p className={styles.tagline}>
               Tested OEM &amp; aftermarket parts for cars and trucks, shipped nationwide. Trusted by mechanics, fleets, and drivers across the USA.

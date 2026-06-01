@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from '../Icon/Icon';
 import { primaryNav } from '@/data/navigation';
@@ -36,13 +37,14 @@ export default function Header() {
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={styles.inner}>
         <Link href="/" className={styles.logo} aria-label={`${site.name} home`}>
-          <span className={styles.logoMark} aria-hidden="true">
-            <Icon name="gear" size={22} stroke={2.2} />
-          </span>
-          <span className={styles.logoText}>
-            <span className={styles.logoBrand}>ROCKAUTOZ</span>
-            <span className={styles.logoSub}>Parts.com</span>
-          </span>
+          <Image
+            src="/logo2.png"
+            alt={site.name}
+            width={866}
+            height={288}
+            className={styles.logoImg}
+            priority
+          />
         </Link>
 
         <nav className={styles.nav} aria-label="Primary">
@@ -94,7 +96,13 @@ export default function Header() {
               transition={{ type: 'tween', duration: 0.3, ease: [0.32, 0.72, 0, 1] }}
             >
               <div className={styles.mobileMenuHeader}>
-                <span className={styles.logoBrand}>ROCKAUTOZ</span>
+                <Image
+                  src="/logo2.png"
+                  alt={site.name}
+                  width={866}
+                  height={288}
+                  className={styles.logoImg}
+                />
                 <button
                   type="button"
                   className={styles.closeBtn}

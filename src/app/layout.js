@@ -1,8 +1,12 @@
 import './globals.scss';
 import { site } from '@/data/site';
+import { JsonLd, organizationSchema, websiteSchema } from '@/lib/structuredData';
 
 export const metadata = {
   metadataBase: new URL('https://rockautozparts.com'),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: `${site.name} — OEM & Aftermarket Parts for Cars & Trucks Across the USA`,
     template: `%s | ${site.name}`,
@@ -62,6 +66,9 @@ export const viewport = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
+      </head>
       <body>{children}</body>
     </html>
   );

@@ -29,9 +29,17 @@ export default function LegalPage({ eyebrow, title, updated, intro, sections }) 
           {sections.map((s) => (
             <section key={s.heading} className={styles.section}>
               <h2 className={styles.sectionTitle}>{s.heading}</h2>
-              {s.body.map((p, i) => (
-                <p key={i} className={styles.paragraph}>{p}</p>
-              ))}
+              {s.body.map((p, i) =>
+                typeof p === 'object' && p.list ? (
+                  <ul key={i} className={styles.list}>
+                    {p.list.map((item, j) => (
+                      <li key={j} className={styles.listItem}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p key={i} className={styles.paragraph}>{p}</p>
+                )
+              )}
             </section>
           ))}
 

@@ -8,6 +8,7 @@ import { site } from '@/data/site';
 export const metadata = {
   title: 'Privacy Policy',
   description: `${site.name} privacy policy — how we collect, use, and protect customer data submitted through part requests and contact forms.`,
+  alternates: { canonical: '/privacy-policy' },
 };
 
 const sections = [

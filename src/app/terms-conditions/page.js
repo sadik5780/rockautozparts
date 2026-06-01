@@ -8,6 +8,7 @@ import { site } from '@/data/site';
 export const metadata = {
   title: 'Terms & Conditions',
   description: `${site.name} terms and conditions covering website usage, quotes, warranty, shipping, and liability.`,
+  alternates: { canonical: '/terms-conditions' },
 };
 
 const sections = [
@@ -46,26 +47,62 @@ const sections = [
     ],
   },
   {
-    heading: '6. Limitation of Liability',
+    heading: '6. Additional Return Charges',
+    body: [
+      'If a customer returns a product, certain charges may be deducted from the original charged amount before the refund is issued.',
+      'These deductions may include:',
+      {
+        list: [
+          'Return shipping charges',
+          'Original shipping charges, if applicable',
+          'Handling or processing fees',
+          'Restocking charges, if applicable',
+          'Any carrier fees, inspection fees, or packaging charges related to the return',
+        ],
+      },
+      'The final refund amount will be calculated after the returned item is received and inspected. Refund deductions may vary depending on the product type, condition, shipping cost, and reason for return.',
+      `If the return is due to an error from our side, such as sending the wrong item or a verified issue caused by ${site.name}, we will review the case and may waive return-related deductions.`,
+    ],
+  },
+  {
+    heading: '7. Expedited / Fast Shipping Charges',
+    body: [
+      'Our standard estimated shipping time is usually 4–5 business days after processing and carrier pickup.',
+      'If a customer wants faster delivery than our standard shipping time, extra shipping charges may apply. Fast shipping, priority shipping, express shipping, or special freight service costs will be quoted separately before the order is processed.',
+      'Expedited shipping charges depend on:',
+      {
+        list: [
+          'Customer location',
+          'Part size and weight',
+          'Carrier availability',
+          'Freight or special handling requirements',
+          'Requested delivery speed',
+        ],
+      },
+      `Fast shipping fees are non-refundable once the order has been shipped, unless the delay or issue is caused by ${site.name}.`,
+    ],
+  },
+  {
+    heading: '8. Limitation of Liability',
     body: [
       `To the maximum extent permitted by law, ${site.name} shall not be liable for any indirect, incidental, special, consequential, or punitive damages — including loss of profits, downtime, towing, or rental vehicle costs — arising from the use of, or inability to use, parts supplied by us.`,
       'Our total liability for any claim related to a part shall not exceed the purchase price of that specific part.',
     ],
   },
   {
-    heading: '7. Intellectual Property',
+    heading: '9. Intellectual Property',
     body: [
       'All content on this website — including logos, text, graphics, and imagery — is the property of its respective owners and is protected by applicable intellectual property laws. You may not reproduce, distribute, or modify any content without prior written permission.',
     ],
   },
   {
-    heading: '8. Governing Law',
+    heading: '10. Governing Law',
     body: [
       `These Terms & Conditions are governed by the laws of the State of ${site.address.state}, USA, without regard to conflict-of-law principles. Any dispute shall be resolved in the state or federal courts located in ${site.address.city}, ${site.address.state}.`,
     ],
   },
   {
-    heading: '9. Contact Information',
+    heading: '11. Contact Information',
     body: [
       `Questions about these terms can be directed to ${site.name} by phone at ${site.phone}.`,
       `Mailing address: ${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}.`,
@@ -82,7 +119,7 @@ export default function TermsConditionsPage() {
         <LegalPage
           eyebrow="Legal"
           title="Terms & Conditions"
-          updated="January 12, 2026"
+          updated="May 29, 2026"
           intro={`These Terms & Conditions govern your use of the ${site.name} website and the parts-quoting services we provide. Please read them carefully.`}
           sections={sections}
         />
