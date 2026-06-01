@@ -103,6 +103,17 @@ export default function Footer() {
             <Link href="/terms-conditions">Terms &amp; Conditions</Link>
           </div>
         </div>
+
+        <p className={styles.credit}>
+          Built by{' '}
+          <a
+            href="https://www.sadikstudio.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Sadik Studio
+          </a>
+        </p>
       </div>
     </footer>
   );
