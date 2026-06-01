@@ -1,11 +1,12 @@
 {
   "name": "rockautozparts",
   "version": "1.0.0",
+  "main": "server.js",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next build && next start",
+    "start": "node server.js",
     "lint": "next lint"
   },
   "dependencies": {
