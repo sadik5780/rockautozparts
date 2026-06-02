@@ -4,7 +4,7 @@
 .hero {
   position: relative;
   overflow: hidden;
-  padding-block: 4rem 5rem;
+  padding-block: 1.5rem 5rem;
   isolation: isolate;
 
   @include md {
@@ -152,9 +152,14 @@
 
 .ctas {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.75rem;
   margin-top: 2.2rem;
+
+  @include sm {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .primary {

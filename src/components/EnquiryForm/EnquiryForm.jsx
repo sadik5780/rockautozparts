@@ -225,7 +225,7 @@ export default function EnquiryForm() {
                 />
               </div>
 
-              <div className={styles.row3}>
+              <div className={styles.pair}>
                 <Field
                   label="Trim"
                   name="trim"
@@ -246,17 +246,18 @@ export default function EnquiryForm() {
                   onBlur={handleBlur}
                   placeholder="2.5L I4"
                 />
-                <Field
-                  label="VIN"
-                  name="vin"
-                  optional
-                  value={values.vin}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="17 characters"
-                  maxLength={17}
-                />
               </div>
+
+              <Field
+                label="VIN"
+                name="vin"
+                optional
+                value={values.vin}
+                onChange={handleChange}
+                onBlur={handleBlur}
+                placeholder="17 characters"
+                maxLength={17}
+              />
 
               <Field
                 label="Part Number"

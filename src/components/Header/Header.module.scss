@@ -133,7 +133,7 @@
 }
 
 .callBtn {
-  display: none;
+  display: inline-flex;
   align-items: center;
   gap: 0.7rem;
   padding: 0.5rem 0.5rem 0.5rem 1rem;
@@ -142,10 +142,6 @@
   border-radius: $radius-md;
   text-decoration: none;
   transition: background 0.25s ease, transform 0.25s ease;
-
-  @include md {
-    display: inline-flex;
-  }
 
   &:hover {
     background: $color-accent-hover;
@@ -184,145 +180,3 @@
   letter-spacing: 0.03em;
 }
 
-.hamburger {
-  @include btn-reset;
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  color: $color-text;
-  border-radius: $radius-md;
-  background: $color-surface-2;
-  border: 1px solid $color-border;
-  transition: border-color 0.2s ease;
-
-  @include lg {
-    display: none;
-  }
-
-  &:hover {
-    border-color: $color-border-strong;
-  }
-}
-
-.mobileMenu {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  background: rgba(15, 17, 21, 0.7);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-
-.mobileMenuPanel {
-  position: absolute;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  width: min(360px, 88vw);
-  background: $color-surface;
-  border-left: 1px solid $color-border;
-  display: flex;
-  flex-direction: column;
-  padding: 1.25rem 1.5rem 2rem;
-  padding-bottom: calc(2rem + env(safe-area-inset-bottom, 0));
-  overflow-y: auto;
-  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.4);
-}
-
-.mobileMenuHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-block: 0.5rem 1.5rem;
-  border-bottom: 1px solid $color-border;
-}
-
-.closeBtn {
-  @include btn-reset;
-  color: $color-text;
-  width: 40px;
-  height: 40px;
-  display: grid;
-  place-items: center;
-  border-radius: $radius-md;
-  background: $color-surface-2;
-  border: 1px solid $color-border;
-
-  &:hover {
-    border-color: $color-border-strong;
-  }
-}
-
-.mobileNav {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0.5rem;
-}
-
-.mobileNavLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.1rem 0.25rem;
-  font-family: $font-display;
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: $color-text;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  border-bottom: 1px solid $color-border;
-  text-decoration: none;
-  transition: color 0.2s ease, padding 0.2s ease;
-
-  svg {
-    color: $color-text-dim;
-    transition: color 0.2s ease, transform 0.2s ease;
-  }
-
-  &:hover {
-    color: $color-accent;
-    padding-left: 0.6rem;
-
-    svg {
-      color: $color-accent;
-      transform: translateX(2px);
-    }
-  }
-}
-
-.mobileMenuFoot {
-  margin-top: auto;
-  padding-top: 1.5rem;
-  border-top: 1px solid $color-border;
-}
-
-.mobileCall {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  padding: 1rem 1.5rem;
-  background: $color-accent;
-  color: #fff;
-  font-family: $font-display;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  border-radius: $radius-md;
-  text-decoration: none;
-  transition: background 0.25s ease;
-
-  &:hover {
-    background: $color-accent-hover;
-  }
-}
-
-.mobileSub {
-  margin-top: 1rem;
-  font-size: 0.74rem;
-  color: $color-text-dim;
-  text-align: center;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-weight: 500;
-}

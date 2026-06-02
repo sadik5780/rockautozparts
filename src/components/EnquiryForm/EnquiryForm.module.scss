@@ -119,12 +119,18 @@
 
 .row3 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
 
   @include sm {
     grid-template-columns: 2fr 2fr 1.2fr;
   }
+}
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
 .field {
