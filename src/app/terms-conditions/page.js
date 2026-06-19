@@ -11,6 +11,9 @@ export const metadata = {
   alternates: { canonical: '/terms-conditions' },
 };
 
+// Render on demand — see note in src/app/layout.js.
+export const dynamic = 'force-dynamic';
+
 const sections = [
   {
     heading: '1. Website Usage',

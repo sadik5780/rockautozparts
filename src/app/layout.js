@@ -64,6 +64,13 @@ export const viewport = {
   initialScale: 1,
 };
 
+// Skip build-time static prerendering for every route. The deploy sandbox loads
+// a duplicate React instance during the build's prerender worker, crashing with
+// "Cannot read properties of null (reading 'useContext')" (and the downstream
+// <Html> fallback on /404,/500). Rendering on demand at request time avoids the
+// broken build-time render entirely so the build completes and produces .next.
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
