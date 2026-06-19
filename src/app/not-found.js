@@ -4,9 +4,6 @@ export const metadata = {
   title: 'Page Not Found',
 };
 
-// Render on demand — see note in src/app/layout.js.
-export const dynamic = 'force-dynamic';
-
 export default function NotFound() {
   return (
     <main

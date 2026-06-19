@@ -12,9 +12,6 @@ import MobileCallButton from '@/components/MobileCallButton/MobileCallButton';
 import { JsonLd, faqSchema } from '@/lib/structuredData';
 import { faqs } from '@/data/faqs';
 
-// Render on demand — see note in src/app/layout.js.
-export const dynamic = 'force-dynamic';
-
 export default function HomePage() {
   return (
     <>

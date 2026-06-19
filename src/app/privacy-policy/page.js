@@ -11,9 +11,6 @@ export const metadata = {
   alternates: { canonical: '/privacy-policy' },
 };
 
-// Render on demand — see note in src/app/layout.js.
-export const dynamic = 'force-dynamic';
-
 const sections = [
   {
     heading: '1. Information We Collect',
