@@ -64,6 +64,14 @@ export const viewport = {
   initialScale: 1,
 };
 
+// Render every route on demand instead of prerendering at build time. The app
+// serves correctly at runtime, but the deploy sandbox's build-time prerender
+// worker loads a broken/duplicate React instance and crashes static generation
+// with "Cannot read properties of null (reading 'useContext')". Forcing dynamic
+// rendering skips that step entirely so the build completes and the server
+// renders pages per request.
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
