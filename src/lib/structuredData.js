@@ -1,13 +1,9 @@
-// JSON-LD structured data builders.
-// These feed search engines and answer engines a machine-readable description
-// of the business, the site, and the FAQ — the foundation of AEO.
-
 import { site } from '@/data/site';
 import { categories } from '@/data/categories';
 
 const SITE_URL = 'https://rockautozparts.com';
 
-// AutoPartsStore is a recognized schema.org type and the most specific match.
+
 export function organizationSchema() {
   return {
     '@context': 'https://schema.org',

@@ -1,7 +1,3 @@
-// FAQ content — written as direct question → concise answer pairs.
-// Answer engines (Google AI Overviews, ChatGPT, Perplexity) lift these
-// verbatim, and the same data powers the FAQPage JSON-LD. Keep answers
-// factual, self-contained, and free of "see above" references.
 
 export const faqs = [
   {

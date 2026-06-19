@@ -33,7 +33,7 @@ export default function FinalCTA() {
             <div className={styles.ctas}>
               <a href={site.phoneHref} className={styles.primary}>
                 <Icon name="phone" size={18} stroke={2.4} />
-                Call Now — {site.phone}
+                Call Now for Price &amp; Availability
               </a>
               <a href="#enquiry" className={styles.secondary}>
                 Request a Part
@@ -52,7 +52,7 @@ export default function FinalCTA() {
               </div>
               <div className={styles.trustItem}>
                 <Icon name="check" size={16} stroke={2.6} />
-                No high-pressure sales
+                Quality checked part
               </div>
             </div>
           </div>

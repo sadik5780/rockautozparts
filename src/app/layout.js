@@ -1,3 +1,4 @@
+import Script from 'next/script';
 import './globals.scss';
 import { site } from '@/data/site';
 import { JsonLd, organizationSchema, websiteSchema } from '@/lib/structuredData';
@@ -69,7 +70,23 @@ export default function RootLayout({ children }) {
       <head>
         <JsonLd data={[organizationSchema(), websiteSchema()]} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+
+        {/* Google tag (gtag.js) — Google Ads */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18245776951"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-18245776951');
+          `}
+        </Script>
+      </body>
     </html>
   );
 }

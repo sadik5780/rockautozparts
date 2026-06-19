@@ -1,8 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Icon from '../Icon/Icon';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { steps } from '@/data/steps';
+import { site } from '@/data/site';
 import styles from './HowItWorks.module.scss';
 
 export default function HowItWorks() {
@@ -46,6 +48,13 @@ export default function HowItWorks() {
               </motion.li>
             ))}
           </ol>
+        </div>
+
+        <div className={styles.ctaRow}>
+          <a href={site.phoneHref} className={styles.ctaBtn}>
+            <Icon name="phone" size={18} stroke={2.4} />
+            Fast Quote by Phone
+          </a>
         </div>
       </div>
     </section>

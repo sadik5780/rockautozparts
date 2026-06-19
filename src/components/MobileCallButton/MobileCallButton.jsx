@@ -32,8 +32,8 @@ export default function MobileCallButton() {
               <Icon name="phone" size={18} stroke={2.4} />
             </span>
             <span className={styles.text}>
-              <span className={styles.label}>Tap to Call</span>
-              <span className={styles.number}>{site.phone}</span>
+              <strong className={styles.specialist}>Call Part Specialist</strong>
+              <span className={styles.tap}>Tap to Call</span>
             </span>
             <span className={styles.arrow}>
               <Icon name="arrowRight" size={18} stroke={2.4} />

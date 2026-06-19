@@ -1,7 +1,5 @@
 node_modules
 .next
-# out/ is intentionally committed: we build the static export locally and deploy
-# it because the GoDaddy PaaS build environment breaks Next's prerender.
 .env*.local
 .DS_Store
 *.log

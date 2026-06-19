@@ -1,10 +1,3 @@
-// Zero-dependency static file server for the prebuilt Next.js export in ./out.
-//
-// Why this exists: GoDaddy's PaaS build environment injects Vite-based dev-tools
-// that break Next's SSR/prerender, so we build locally (next build with
-// output: 'export') and commit ./out, then serve those static files here.
-// The platform only runs `npm start` (-> node server.js); it does not build.
-
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -38,13 +31,10 @@ function contentType(filePath) {
   return MIME[path.extname(filePath).toLowerCase()] || 'application/octet-stream';
 }
 
-// Resolve a request pathname to a file inside ROOT, or null if not found.
-// Tries: exact file, then <path>.html, then <path>/index.html.
 function resolveFile(pathname) {
   let rel = decodeURIComponent(pathname);
   if (rel.endsWith('/')) rel += 'index.html';
 
-  // Prevent path traversal: resolve and ensure the result stays under ROOT.
   const candidates = [rel, `${rel}.html`, path.join(rel, 'index.html')];
   for (const candidate of candidates) {
     const abs = path.join(ROOT, candidate);
@@ -53,7 +43,6 @@ function resolveFile(pathname) {
       const stat = fs.statSync(abs);
       if (stat.isFile()) return abs;
     } catch {
-      // not found, try next candidate
     }
   }
   return null;
@@ -72,8 +61,7 @@ const server = http.createServer((req, res) => {
 
   if (file) {
     res.writeHead(200, {
-      'Content-Type': contentType(file),
-      // Hashed Next assets are immutable; HTML should always be revalidated.
+      'Content-Type': contentType(file), 
       'Cache-Control': pathname.startsWith('/_next/static/')
         ? 'public, max-age=31536000, immutable'
         : 'public, max-age=0, must-revalidate',
@@ -81,8 +69,7 @@ const server = http.createServer((req, res) => {
     fs.createReadStream(file).pipe(res);
     return;
   }
-
-  // Fallback to the exported 404 page.
+ 
   const notFound = path.join(ROOT, '404.html');
   if (fs.existsSync(notFound)) {
     res.writeHead(404, { 'Content-Type': 'text/html; charset=utf-8' });

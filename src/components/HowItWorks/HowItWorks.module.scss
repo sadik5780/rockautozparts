@@ -129,3 +129,37 @@
   color: $color-text-muted;
   line-height: 1.65;
 }
+
+.ctaRow {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+
+  @include lg {
+    margin-top: 3.5rem;
+  }
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.05rem 2rem;
+  background: $color-accent;
+  color: #fff;
+  font-family: $font-body;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: $radius-md;
+  text-decoration: none;
+  box-shadow: $shadow-accent;
+  transition: background 0.25s ease, transform 0.25s ease;
+
+  &:hover {
+    background: $color-accent-hover;
+    transform: translateY(-1px);
+  }
+}

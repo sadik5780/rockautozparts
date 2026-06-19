@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Icon from '../Icon/Icon';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { categories } from '@/data/categories';
+import { site } from '@/data/site';
 import styles from './Categories.module.scss';
 
 export default function Categories() {
@@ -47,6 +48,14 @@ export default function Categories() {
             </motion.li>
           ))}
         </ul>
+
+        <div className={styles.ctaRow}>
+          <p className={styles.ctaText}>Don&apos;t see your part listed?</p>
+          <a href={site.phoneHref} className={styles.ctaBtn}>
+            <Icon name="phone" size={18} stroke={2.4} />
+            Call to Find Your Part
+          </a>
+        </div>
       </div>
     </section>
   );

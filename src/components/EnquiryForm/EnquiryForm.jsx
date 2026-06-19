@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Icon from '../Icon/Icon';
 import { submitQuote } from '@/lib/submitQuote';
+import { site } from '@/data/site';
 import styles from './EnquiryForm.module.scss';
 
 const initialForm = {
@@ -299,6 +300,11 @@ export default function EnquiryForm() {
                   </>
                 )}
               </button>
+
+              <a href={site.phoneHref} className={styles.callBtn}>
+                <Icon name="phone" size={18} stroke={2.4} />
+                Call for Price &amp; Availability
+              </a>
 
               <p className={styles.disclaimer}>
                 By submitting, you agree to be contacted regarding your auto parts inquiry.

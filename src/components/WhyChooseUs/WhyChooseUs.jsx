@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Icon from '../Icon/Icon';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { features } from '@/data/features';
+import { site } from '@/data/site';
 import styles from './WhyChooseUs.module.scss';
 
 export default function WhyChooseUs() {
@@ -40,6 +41,13 @@ export default function WhyChooseUs() {
             </motion.li>
           ))}
         </ul>
+
+        <div className={styles.ctaRow}>
+          <a href={site.phoneHref} className={styles.expertCta}>
+            <Icon name="phone" size={18} stroke={2.4} />
+            Call to Get in Touch With Experts
+          </a>
+        </div>
       </div>
     </section>
   );
